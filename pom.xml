@@ -45,12 +45,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-common</artifactId>
-			<version>3.3.1</version>
-			<scope>provided</scope>
-		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
 		<dependency>
 			<groupId>io.netty</groupId>
@@ -59,13 +54,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
-		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-client</artifactId>
-			<version>3.3.4</version>
-			<scope>provided</scope>
-		</dependency>
+		
 
 		<!-- https://mvnrepository.com/artifact/com.crealytics/spark-excel -->
 		<dependency>

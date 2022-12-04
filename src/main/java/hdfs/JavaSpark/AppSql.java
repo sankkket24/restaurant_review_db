@@ -9,7 +9,7 @@ public class AppSql {
 
 	public static void main(String[] args) {
 
-		SparkSession sparkSession = SparkSession.builder().appName("Java Spark Sql Example").master("local[2]")
+		SparkSession sparkSession = SparkSession.builder().appName("Java Spark Sql Example").master("local[1]")
 				.getOrCreate();
 
 		StructType struct = new StructType().add("business_id", "string").add("name", "string").add("address", "string")
@@ -27,9 +27,10 @@ public class AppSql {
 		Dataset<Row> result = sparkSession
 				.sql("SELECT state, sum(review_count) as count FROM reviews GROUP BY state ORDER BY count DESC");
 
+		result.show();
 		result.write().option("header", true).csv("./SparkOutput/topStateWiseRestaurant");
 
-		result.show();
+		
 		Dataset<Row> topCities = sparkSession.sql(
 				"SELECT city,SUM(review_count) AS total_reviews FROM reviews GROUP BY city ORDER BY total_reviews DESC limit 10 ");
 
